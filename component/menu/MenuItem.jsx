@@ -15,27 +15,27 @@ export const MenuItem = () => {
     <>
       
         <MenuBtn
-        icon={<AiOutlineHome/>}
+        icon={<AiOutlineHome size={"12px"}/>}
         txt="عام"
         xhref="/general"
         />
         <MenuBtn
-        icon={<MdOutlineLocalOffer/>}
+        icon={<MdOutlineLocalOffer size={"12px"}/>}
         txt="العروض"
         xhref={"/"}
         />
         <MenuBtn
-        icon={<GoRequestChanges/>}
+        icon={<GoRequestChanges size={"12px"}/>}
         txt="الطلبات"
         xhref={"/request"}
         />
         <MenuBtn
-        icon={<GoComment/>}
+        icon={<GoComment size={"12px"}/>}
         txt="التعليقات"
         xhref={"/comments"}
         />
            <MenuBtn
-        icon={<AiFillSetting/>}
+        icon={<AiFillSetting size={"12px"}/>}
         txt="الاعدادات"
         xhref={"/setting"}
         />
@@ -49,30 +49,39 @@ export const MenuItem = () => {
 
 const MenuBtn = ({ txt ,icon,xhref}) => {
   const MQ = useMediaQuery("(max-width:600px)");
-  console.log({ MQ });
-
   return (
     <>
       <Button
         component={Link}
-        color="warning"
-        variant="contained"
+        variant="text"
         endIcon={icon}
         to={xhref}
-        
         sx={{
-          
-          minWidth:0,
+          color: "rgb(245,245,247)",
+          minWidth: 0,
           width: "15%",
-
           display: "flex",
           alignItems: "center",
-          justifyContent: {xs:"center",sm:"space-between"},
-          lineHeight:"1.5"
+          justifyContent: "center",
+          gap:"1rem",
+          lineHeight: "1.5",
         }}
       >
         {/* if Small screen Show Only icons */}
-        {!MQ && <Typography sx={{ fontFamily: "TB",lineHeight:"1.5",fontSize:".9rem",height:"100%" }}>{txt}</Typography>}
+        {!MQ && (
+          <Typography
+          variant="span"
+            sx={{
+              fontFamily: "AF",
+              lineHeight: "1.5",
+              fontSize: "17px",
+              height: "100%",
+              fontWeight: "light",
+            }}
+          >
+            {txt}
+          </Typography>
+        )}
       </Button>
     </>
   );

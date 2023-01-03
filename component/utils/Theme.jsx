@@ -68,9 +68,15 @@ export const lightTheme = {
   },
 
   shadow1:"rgb(0 0 0 / 20%) 0px 2px 1px -1px, rgb(0 0 0 / 14%) 0px 1px 1px 0px, rgb(0 0 0 / 12%) 0px 1px 3px 0px;",
-  shadow2:"rgb(0 0 0 / 20%) 0px 3px 3px -2px, rgb(0 0 0 / 14%) 0px 3px 4px 0px, rgb(0 0 0 / 12%) 0px 1px 8px 0px;"
+  shadow2:"rgb(0 0 0 / 20%) 0px 3px 3px -2px, rgb(0 0 0 / 14%) 0px 3px 4px 0px, rgb(0 0 0 / 12%) 0px 1px 8px 0px;",
 
   
+appleNavbarBackColor:"rgb(29,29,31)",
+appleNavbarText:"rgb(245,245,247)",
+appleBackgroud:"rgb(110,110,115)",
+appleNavFontsize:"17px",
+iconFont :"12px"
+
 
 
 }

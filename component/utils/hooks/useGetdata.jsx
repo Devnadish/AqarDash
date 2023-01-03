@@ -46,7 +46,7 @@ const offerId =async () =>{
         
     const getOfferToudate =async (key,offerid) =>{
       // console.log(process.env.NODE_ENV)
-      console.log(offerid)
+      // console.log(offerid)
        const url=import.meta.env.VITE_BASE_URL+"/aqar/newoffer/getOfferToupdate"
         return await axios.get(url,offerid)
        
@@ -68,7 +68,7 @@ export const useGetCitites = () =>useQuery(["cities"], getCities, {refetchOnMoun
 export const useGetofferToUpdate = (UpdofferId) =>useQuery({
   queryKey:['updOffer'],
   queryFn:async () =>{
-    console.log(UpdofferId)
+    // console.log(UpdofferId)
       return await axios.get(updUrl,{ params:{offerId:UpdofferId}  })
      
     }

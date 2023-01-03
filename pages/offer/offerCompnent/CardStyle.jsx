@@ -40,7 +40,7 @@ const OfferCardWraper = styled.div`
   border-radius: 6px;
   /* border: 1px solid; */
   color: ${({ theme }) => theme.text};
-  box-shadow: 0 2px 2px rgba(0, 0, 0, 0.5);
+  box-shadow: ${({theme})=>theme.shadow1};
   overflow: auto;
   @media (max-width: 768px) {
     flex-direction: column;
@@ -62,7 +62,7 @@ const OfferCardHeader = styled.div`
   padding: .5rem 1rem;
   background-color: ${({ theme }) => theme.cardbg};
   color: ${({ theme }) => theme.text};
-  font-family: "CairoBold";
+  font-family: "CB";
   text-align: center;
 `;
 /* ----------------------------------------------- */
@@ -128,7 +128,6 @@ justify-content: center;
 align-items: center;
   font-family: "CB";
   font-size: 1.4rem;
-  /* background-color: red; */
   background-color: ${({theme}) =>   theme.primary.extradark };
   padding: 1rem ;
   border: 2px solid white;
@@ -136,7 +135,7 @@ align-items: center;
   width: 50px;
   height: 50px;
   border-radius:50%;
-  box-shadow: -1px 4px 4px rgba(0, 0, 0, 0.6);
+  box-shadow: ${({theme})=>theme.shadow2};
 `;
 
 
@@ -149,11 +148,9 @@ align-items: center;
 font-family: "CB";
 font-size: 1.5rem;
 text-align: right;
-/* background-color: ${({type,theme}) => type === 0 ? theme.error.dark : theme.success.dark }    ; */
 color: ${({type,theme}) => type === 0 ? theme.error.dark : theme.success.dark }    ;
 padding: 0 1rem ;
 width: fit-content;
-/* border-radius: 8px; */
 border-bottom: 3px solid;
 border-color: ${({type,theme}) => type === 0 ? theme.error.dark : theme.success.dark }    ;
 padding: 5px;
@@ -192,7 +189,7 @@ const LocationDetail = styled.p`
   border-radius: 8px;
   width: fit-content;
 `;
-const LocationWraper = styled.p`
+const LocationWraper = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;

@@ -5,6 +5,7 @@ const General=lazy(()=>import("../../../pages/general/General"))
 const Setting=lazy(()=>import("../../../pages/setting/Setting"))
 const Request=lazy(()=>import("../../../pages/requests/Request"))
 const Comments=lazy(()=>import("../../../pages/comments/Comments"))
+const NewOffer=lazy(()=>import("../../../pages/offer/New/NewOffer"))
 
 function MyRoutes() {
   return (
@@ -12,6 +13,7 @@ function MyRoutes() {
     <Routes>
       <Route path="/">
         <Route index element={<Offer />} />
+        <Route path="/newoffer" element={<NewOffer/>} />
         <Route path="/general" element={<General/>} />
         <Route path="/comments" element={<Comments/>} />
         <Route path="/request" element={<Request />} />

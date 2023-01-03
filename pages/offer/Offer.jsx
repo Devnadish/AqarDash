@@ -7,6 +7,7 @@ import { Box, Button, Typography } from "@mui/material";
 import { MdAddCircleOutline } from "react-icons/md";
 import { useGetAlloffers } from "../../component/utils/hooks/useGetdata";
 import { NewCard } from "./offerCompnent/NewCard";
+import { Link } from "react-router-dom";
 
 export const Offer = () => {
   const [open, setOpen] = useState(false);
@@ -33,20 +34,22 @@ export const Offer = () => {
           <CMP.OfferCounter>
             <CMP.OfferCounterWraper>
               <p>عدد العروض</p>
-              <p> <Countup end={data?.data.length} />  </p>
+                <Countup end={data?.data.length} />   
             </CMP.OfferCounterWraper>
             <CMP.OfferCounterWraper>
               <p>عروض الايجار </p>
-              <p> <Countup end={rent} /> </p>
+               <Countup end={rent} />  
             </CMP.OfferCounterWraper>
             <CMP.OfferCounterWraper>
               <p>عروض البيع</p>
-              <p> <Countup end={sale} />  </p>
+               <Countup end={sale} />   
             </CMP.OfferCounterWraper>
           </CMP.OfferCounter>
           <Button
             variant="contained"
-            onClick={() => setOpen(true)}
+            component={Link}
+            to={"/newoffer"}
+            // onClick={() => setOpen(true)}
             endIcon={<MdAddCircleOutline />}
             sx={{
               // width: "50%",

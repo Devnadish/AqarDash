@@ -55,7 +55,7 @@ const CardHeader= styled.div`
 width: 100%;
 height: 30px;
 background-color: ${({ theme }) => theme.bg};
-font-family: "CairoBold";
+font-family: "CB";
 padding: .1rem;
 text-align: center;
 
@@ -69,7 +69,7 @@ width: 100%;
 height: fit-content;
 padding: .5rem;
 background-color: ${({ theme }) => theme.bg};
-font-family: "CairoBold";
+font-family: "CB";
 /* padding: .1rem; */
 text-align: center;
 

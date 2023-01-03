@@ -38,7 +38,7 @@ function DiloagShow({
           <Typography
             variant="body1"
             sx={{
-              fontFamily:"CairoBold",
+              fontFamily:"CB",
               color: "background.paper",
               fontSize:"1rem"
             }}

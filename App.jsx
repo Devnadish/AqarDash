@@ -4,6 +4,7 @@ import styled, { ThemeProvider } from "styled-components";
 import { darkTheme, lightTheme } from "./component/utils/Theme";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import {ErrorBoundary} from "react-error-boundary"
 // import PageNotFound from "./pages/404/PageNotFound";
 
 
@@ -14,7 +15,7 @@ import {
 import MyRoutes from "./component/utils/Routes/MyRoutes";
 import { MenuItem } from "./component/menu/MenuItem";
  
-
+ 
 
 
 
@@ -56,8 +57,8 @@ position: sticky;
   justify-content: space-evenly;
   align-items: center;
   width: 100%;
-  height: 54px;
-  background-color: blueviolet;
+  height: 44px;
+  background-color: rgba(29,29,31);
   color: #FFFFFF;
   min-width: 0px;
   z-index: 100;
@@ -71,6 +72,7 @@ function App() {
   const [open, setOpen] = useState(false);
   return (
     <>
+    <ErrorBoundary fallback={<h1> Error  </h1>} >
      <QueryClientProvider client={queryClient}> 
       <ThemeProvider theme={darkMode ? darkTheme : lightTheme}>
         {/* <Container1> */}
@@ -98,6 +100,7 @@ function App() {
         pauseOnHover
         theme="colored"
       />
+      </ErrorBoundary>
     </>
   );
 }

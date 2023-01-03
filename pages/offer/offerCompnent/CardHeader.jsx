@@ -21,11 +21,13 @@ export const CardHeader = ({ title, oId,  offertype, offertypeCat,iscomment, isp
             width: "100%",
           }}
         >
-          <Typography
+          <Typography component={'div'}
+          
             sx={{ fontFamily: "CB", color: "white", mb: 1, textAlign: "right" }}
           >
             {title}
           </Typography>
+          
           <Box
             sx={{
               display: "flex",
@@ -35,22 +37,22 @@ export const CardHeader = ({ title, oId,  offertype, offertypeCat,iscomment, isp
             }}
           >
             <CMP.OfferTypeTXT type={offertypeCat}>{offertype}</CMP.OfferTypeTXT>
-            <CMP.OfferOptionTxt type={iscomment}>
+            {/* <CMP.OfferOptionTxt type={iscomment}>
               {iscomment === 1 ? (
                 <Tooltip
-                  arrow={true}
-                  placement="top"
-                  title={"مسموح التعليق للعرض"}
+                arrow={true}
+                placement="top"
+                title={"مسموح التعليق للعرض"}
                 >
                   <div>
                     <FaCommentDots />
                   </div>
-                </Tooltip>
+                 </Tooltip>
               ) : (
                 <Tooltip
-                  arrow={true}
-                  placement="top"
-                  title={"غير مسموح التعليق للعرض"}
+                arrow={true}
+                placement="top"
+                title={"غير مسموح التعليق للعرض"}
                 >
                   <div>
                     <FaCommentSlash color="red"/>
@@ -61,26 +63,26 @@ export const CardHeader = ({ title, oId,  offertype, offertypeCat,iscomment, isp
             <CMP.OfferOptionTxt type={ispriceshown}>
               {ispriceshown === 1 ? (
                 <Tooltip
-                  arrow={true}
-                  placement="top"
-                  title={"مسموح عرض السعر"}
-                >
-                  <div>
+                arrow={true}
+                placement="top"
+                title={"مسموح عرض السعر"}
+              > 
+              <div>
                     <FaCommentDollar />
                   </div>
-                </Tooltip>
+                </Tooltip> 
               ) : (
                 <Tooltip
-                  arrow={true}
-                  placement="top"
-                  title={"غير مسموح عرض السعر"}
+                arrow={true}
+                placement="top"
+                title={"غير مسموح عرض السعر"}
                 >
                   <div>
                     <FaCreativeCommonsNc color="red"/>
                   </div>
                 </Tooltip>
               )}
-            </CMP.OfferOptionTxt>
+            </CMP.OfferOptionTxt> */}
             {/* <CMP.OfferOptionTxt type={isowner}>  {isowner === 1 ? "المالك" : "مسوق"}</CMP.OfferOptionTxt> */}
           </Box>
         </Box>
