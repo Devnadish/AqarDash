@@ -21,7 +21,8 @@ export const OfferId = ({ masterOfferNO }) => {
           borderRadius: "5px",
           boxShadow: 1,
           height: "100%",
-          position: "relative"
+          position: "relative",
+          
           
         }}
         justifyContent={"space-between"}

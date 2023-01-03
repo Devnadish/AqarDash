@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import Box from "@mui/material/Box";
 import { OfferId } from "./OfferId";
 import CMP from "./offerStyle";
@@ -12,7 +12,7 @@ import { handleSubmitData ,defValue} from "./fnc";
 import { FormProvider, useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { offerSchema } from "../../../component/utils/validation/newOfferValidation";
-import TstSelect from "./TstSelect";
+import {AiOutlineSave,AiOutlineClear} from "react-icons/ai"
 
 function NewOffer() {
   const { data, isFetched, refetch } = useOfferID();
@@ -83,6 +83,7 @@ function NewOffer() {
           >
             تاسيس عرض جديد
           </Box>
+
           <Stack
             sx={{
               width: "100%",
@@ -98,7 +99,7 @@ function NewOffer() {
             <Box
               sx={{
                 display: "flex",
-                flexDirection: { xs: "column", md: "row" },
+                flexDirection: { xs: "column", sm: "column", md: "row" },
                 width: "100%",
                 justifyContent: "space-between",
                 alignItems: "stretch",
@@ -109,6 +110,7 @@ function NewOffer() {
                 sx={{
                   display: "flex",
                   flexDirection: "column",
+                  // flexDirection: { xs: "column", sm: "column", md: "row" },
                   justifyContent: "space-between",
                   gap: "1rem",
                 }}
@@ -117,7 +119,7 @@ function NewOffer() {
                   sx={{
                     display: "flex",
                     width: "100%",
-                    flexDirection: { xs: "column", sm: "row" },
+                    flexDirection: { xs: "column", sm: "column", md: "row" },
                     justifyContent: "space-between",
                     alignItems: "stretch",
                     gap: "2rem",
@@ -148,20 +150,30 @@ function NewOffer() {
             <Box
               sx={{
                 display: "flex",
-                width: "100%",
+                width: {xs:"100%",md:"50%"},
                 boxShadow: 1,
                 padding: "1rem",
                 justifyContent: "space-around",
                 gap: "3rem",
+                alignItems: "center",
+                alignSelf: "flex-end",
               }}
             >
               <Button
                 variant="contained"
-                color={"warning"}
+                color={"success"}
                 type="submit"
                 fullWidth
                 // disabled={isSaveProccess == true ? true : false  }  //TODO: important to displable it while saving
-                sx={{ fontFamily: "CB" }}
+                sx={{
+                  fontFamily: "CB",
+                  boxShadow: 0,
+                  borderRadius: 0,
+                  minHeight: "45px",
+                  display: "felx",
+                  justifyContent: "space-evenly",
+                }}
+                endIcon={<AiOutlineSave />}
               >
                 حفظ
               </Button>
@@ -172,7 +184,15 @@ function NewOffer() {
                 type="button"
                 fullWidth
                 onClick={() => reset()}
-                sx={{ fontFamily: "CB" }}
+                sx={{
+                  fontFamily: "CB",
+                  boxShadow: 0,
+                  borderRadius: 0,
+                  minHeight: "45px",
+                  display: "felx",
+                  justifyContent: "space-evenly",
+                }}
+                endIcon={<AiOutlineClear />}
               >
                 مسح
               </Button>

@@ -81,7 +81,8 @@ function MultiImageUploader({
       </CMP.ImageContainer>
         <CMP.Dropzone {...getRootProps()}>
           <input type="file" {...getInputProps()} />
-          <ImUpload2 color={"white"} size={"2rem"} />
+
+          <ImUpload2 color={"white"} size={"1.5rem"} />
           <Typography
             sx={{
               fontFamily: "TB",
@@ -92,6 +93,7 @@ function MultiImageUploader({
           >
             {noteTitle}
           </Typography>
+          
         </CMP.Dropzone>
       </Box>
     </>

@@ -33,6 +33,7 @@ const Form = styled.form`
   
   @media (max-width: 768px)  {
     /* align-items: center; */
+    /* flex-direction: column; */
     margin: 2rem 4rem ;
 }
   

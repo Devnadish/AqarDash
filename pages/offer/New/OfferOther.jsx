@@ -17,19 +17,21 @@ export const OfferOther = ({}) => {
       <Stack
         sx={{
           display: "flex",
-          flexDirection: "row",
+          flexDirection: { xs: "column", md: "row" },
           justifyContent: "space-between",
-          alignItems: "end",
+          alignItems: {xs:"flex-start",sm:"flex-start",md:"flex-end"},
           borderRadius: "5px",
           boxShadow: 1,
           width: "100%",
-          p:1,
+          p: 1,
           height: "100%",
-          position: "relative"
+          position: "relative",
         }}
       >
-       
-        <SectionTilte  TextLabel={"اعدادات"} icon={<AiFillSetting color={"white"} size={"1.5rem"}/>} />
+        <SectionTilte
+          TextLabel={"اعدادات"}
+          icon={<AiFillSetting color={"white"} size={"1.5rem"} />}
+        />
         <br />
         <FormControlLabel
           control={
@@ -46,9 +48,13 @@ export const OfferOther = ({}) => {
             />
           }
           label={
-            <Typography sx={{ fontFamily: "TR" }}>مسموح التعليق</Typography>
+            <Typography variant="span" sx={{ fontFamily: "TR" }}>مسموح التعليق</Typography>
           }
-          sx={{p:0,m:0}}
+          sx={{
+            p: 0,
+            m: 0,
+            
+          }}
         />
 
         <FormControlLabel
@@ -65,8 +71,8 @@ export const OfferOther = ({}) => {
               )}
             />
           }
-          label={<Typography sx={{ fontFamily: "TR" }}>تثبيت العرض</Typography>}
-          sx={{p:0,m:0}}
+          label={<Typography variant="span" sx={{ fontFamily: "TR" }}>تثبيت العرض</Typography>}
+          sx={{ p: 0, m: 0 }}
         />
 
         <FormControlLabel
@@ -84,11 +90,9 @@ export const OfferOther = ({}) => {
             />
           }
           label={
-            <Typography sx={{ fontFamily: "TR" }}>
-               قابل للتفاوض 
-            </Typography>
+            <Typography  variant="span" sx={{ fontFamily: "TR" }}>قابل للتفاوض</Typography>
           }
-          sx={{p:0,m:0}}
+          sx={{ p: 0, m: 0 }}
         />
       </Stack>
     </>

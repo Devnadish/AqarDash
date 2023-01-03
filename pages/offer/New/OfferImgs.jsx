@@ -19,7 +19,6 @@ setImageToUpload}) {
               flexDirection: { xs: "column", sm: "column", md: "row" },
               gap: "1rem",
               justifyContent: "space-between",
-            
             }}
           >
             <OfferLocation
