@@ -1,11 +1,10 @@
 import React, { useState } from "react";
 import CMP from "./CardStyle";
 import { Box, IconButton, Stack } from "@mui/material";
-
 import { BsImages } from "react-icons/bs";
 import { MdLocationOn,MdLocationOff } from "react-icons/md";
 import DiloagShow from "../../../component/dailog/DiloagShow";
-
+import axios from "axios";
 export const CardBody = ({
   imgsrc,
   offerDetail,
@@ -14,11 +13,12 @@ export const CardBody = ({
   dist,
   locationImage,
   offerID,
+  albumFiles,
   cover_offerimage,
 }) => {
   const [isImage, setIsImage] = useState(imgsrc);
   const [open, setOpen] = useState(false);
-  // console.log({dist})
+ 
   return (
     <>
       <CMP.CardBodyWraper>
@@ -27,7 +27,7 @@ export const CardBody = ({
           <CMP.Image
             src={isImage}
             onError={() => setIsImage("coverImageNot.png")}
-            onClick={() => alert(cover_offerimage)}
+            onClick={() => setOpen(true)}
           />
         </CMP.HeroImageWarper>
         {/* -------------Detail  */}
@@ -50,9 +50,20 @@ export const CardBody = ({
             offerID={offerID}
             open={open}
             setOpen={setOpen}
+            albumFiles={albumFiles}
+          
           />
         </Stack>
+        
       </CMP.CardBodyWraper>
+      {open ? (
+        <DiloagShow open={open} toggle={setOpen}>
+          <CMP.ImagePreview
+            src={isImage}
+            onError={() => setIsImage("coverImageNot.png")}
+          />
+        </DiloagShow>
+      ) : null}
     </>
   );
 };
@@ -67,16 +78,7 @@ function Location({ regoin, city, dist }) {
   );
 }
 
-// {open ? (
-//   <DiloagShow open={open} toggle={setOpen}>
-//     <CMP.Image src={bigImage} />
-//   </DiloagShow>
-// ) : null}
-
-// VITE_mainPageImage
-// VITE_OfferImage
-
-function LocationAction({ locationImage, offerID, open, setOpen }) {
+function LocationAction({ locationImage, offerID,albumFiles }) {
   return (
     <>
       <Box
@@ -89,7 +91,7 @@ function LocationAction({ locationImage, offerID, open, setOpen }) {
         }}
       >
         <LocationImage  locationImage={locationImage} />
-        <XOfferAlbum    offerID={offerID}/>
+        <XOfferAlbum    offerID={offerID} albumFiles={albumFiles}/>
       </Box>
     </>
   );
@@ -97,9 +99,8 @@ function LocationAction({ locationImage, offerID, open, setOpen }) {
 
 function LocationImage({ locationImage }) {
   const [isImage, setIsImage] = useState(import.meta.env.VITE_OfferImage+locationImage);
-
   const [open1, setOpen1] = useState(false);
-  console.log(locationImage);
+ 
  
   const showme=import.meta.env.VITE_OfferImage+locationImage
   const showmeError=import.meta.env.VITE_OfferImage+"coverImageNot.png"
@@ -110,11 +111,11 @@ function LocationImage({ locationImage }) {
   return (
     <>
       {locationImage !== "No loaction" ? (
-        <IconButton color="secondary" onClick={handleLocationImage}>
+        <IconButton color="success" onClick={handleLocationImage}>
           <MdLocationOn />
         </IconButton>
       ) : (
-        <IconButton color="secondary" >
+        <IconButton color="error" disabled>
           <MdLocationOff />
         </IconButton>
       )}
@@ -133,28 +134,55 @@ function LocationImage({ locationImage }) {
 
 
 
-/* ----------------------------- */
-  function XOfferAlbum({ offerID,open,setOpen }) {
-    const [open2, setOpen2] = useState(false);
-    const handleLocationAlbum = () => {
-      setOpen2(true);
-      alert(offerID)
 
-    };
+
+
+/* ----------------------------- */
+  function XOfferAlbum({ offerID,albumFiles  }) {
+    const [open2, setOpen2] = useState(false);
+    const [album,setAlbum] = useState([]);
+
+
+    const handleLocationAlbum = async () => {
+      const url = import.meta.env.VITE_BASE_URL + "/aqar/newoffer/getofferalbum";
+      const sendForm = await axios
+        .get(url, { params: { id: offerID } })
+        .then((res) => {
+          setAlbum(res.data);
+            setOpen2(true);
+        });
+  };
 
     return (
       <>
-      <IconButton  onClick={handleLocationAlbum}>
-        <BsImages color="blue" />
-      </IconButton>
-       
- {open2 ? (
-  <DiloagShow open={open2} toggle={setOpen2}>
-    <p>{offerID}</p>
-    {/* <CMP.Image src={bigImage} /> */}
-   </DiloagShow>
- ) : null}
+        {albumFiles === 0 ? (
+          <IconButton disabled>
+            <BsImages />
+          </IconButton>
+        ) : (
+          <IconButton onClick={handleLocationAlbum}>
+            <BsImages color="blue" />
+          </IconButton>
+        )}
+
+        {open2 && (
+          <DiloagShow open={open2} toggle={setOpen2}>
+            <ShowAlbum album={album} />
+          </DiloagShow>
+        )}
       </>
     );
   }
 
+const ShowAlbum=({album})=>{return(<>
+
+<Box sx={{padding:"1rem"}}>
+{album?.map((el,idx)=>{
+      return (
+        <React.Fragment key={idx}>
+          <CMP.ImagePreview src={import.meta.env.VITE_OfferImage + el.image} />
+        </React.Fragment>
+      );
+    })}
+</Box>
+</>)}

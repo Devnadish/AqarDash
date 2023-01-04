@@ -28,6 +28,7 @@ export const NewCard = ({ cardData }) => {
             locationImage={cardData.map}
             offerID={cardData.id_offer}
             cover_offerimage={cardData.cover_offerimage}
+            albumFiles={cardData.album}
           />
         </CMP.OfferCardBody>
         <CMP.OfferCardFooter>

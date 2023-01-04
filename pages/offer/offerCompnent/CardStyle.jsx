@@ -216,6 +216,9 @@ const ImagePreview = styled.img`
   height: auto;
   object-fit: cover;
   border-radius: 8px;
+  padding: 1.5rem;
+  border: 3px solid rgba(0,0,0,.09);
+  margin-top: 1rem;
 `;
 
 
