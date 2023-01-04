@@ -22,14 +22,15 @@ const cityId =""
 const distId =""
 const  isOwner =1
  
-export const handleSubmitData = async (data,locationImage, coverImage, imageToUpload,masterOfferId) => {
+export const handleSubmitData = async (data,locationImage, coverImage, imageToUpload,masterOfferId,trigger) => {
     console.log("🚀 ~ file: NewOffer.jsx:69 ~ handleSubmitData ~ data", data)
-    // alert(JSON.stringify(data))
+    alert(JSON.stringify(data))
     // alert(masterOfferId)
     // alert(data.CitySelect)
     
-    // if(data.CitySelect==="0"){
-    //     alert("select area")
+    // if(data.DistSelect!=="0"){
+    //    trigger("CitySelect")
+    //    alert("uu")
     //     return 
     // }
 
@@ -44,11 +45,11 @@ export const handleSubmitData = async (data,locationImage, coverImage, imageToUp
     offreForm.append("title", data.title);
     offreForm.append("detail", data.detail);
 
-    offreForm.append("offerType", offerTypeId);
+    offreForm.append("offerType", data.offerTypeId);
     offreForm.append("offerId", masterOfferId);
-    offreForm.append("regon", regionId);
-    offreForm.append("city", cityId);
-    offreForm.append("dist", distId);
+    offreForm.append("regon", data.ReigonSelect);
+    offreForm.append("city", data.CitySelect);
+    offreForm.append("dist", data.DistSelect);
     offreForm.append("isOwner", isOwner);
 
     offreForm.append("offerIndex", imageToUpload.length);
@@ -65,8 +66,18 @@ export const handleSubmitData = async (data,locationImage, coverImage, imageToUp
 
 
 const saveToDatabase = async (offreForm) => {
+
+const options = {
+  onUploadProgress: (progressEvent) => {
+    const {loaded, total} = progressEvent;
+    let percent = Math.floor((loaded*100) / total)
+    console.log(`${loaded}kb of  ${total} | ${percent}%`)
+    
+  }
+}
+
     const url = import.meta.env.VITE_BASE_URL + "/aqar/newoffer/savenewoffer";
       const sendForm = await axios
-        .post(url, offreForm,{headers: {'Content-Type': 'multipart/form-data' }})
+        .post(url, offreForm,options,{headers: {'Content-Type': 'multipart/form-data' }})
         .then((res)=> toast.success("تم تفعيل العرض وتم عرضه في صفحة العروض") ) 
   }

@@ -13,6 +13,8 @@ import { FormProvider, useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { offerSchema } from "../../../component/utils/validation/newOfferValidation";
 import {AiOutlineSave,AiOutlineClear} from "react-icons/ai"
+import {MdPublish} from "react-icons/md"
+
 
 function NewOffer() {
   const { data, isFetched, refetch } = useOfferID();
@@ -34,6 +36,7 @@ function NewOffer() {
     watch,
     control,
     handleSubmit,
+    trigger,
     formState: { errors },
   } = FormMx;
   const showme = watch([
@@ -61,7 +64,7 @@ function NewOffer() {
               locationImage,
               coverImage,
               imageToUpload,
-              masterOfferId
+              masterOfferId,
             )
           )}
         >
@@ -173,9 +176,9 @@ function NewOffer() {
                   display: "felx",
                   justifyContent: "space-evenly",
                 }}
-                endIcon={<AiOutlineSave />}
+                endIcon={<MdPublish />}
               >
-                حفظ
+                نشر العرض
               </Button>
 
               <Button

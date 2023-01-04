@@ -20,8 +20,6 @@ const offerId =async () =>{
   }
 
   const getCities =async () =>{
-    // console.log(process.env.NODE_ENV)
-    // console.log(import.meta.env)
      const url=import.meta.env.VITE_BASE_URL+"/aqar/newoffer/getities"
       return await axios.get(url)
      
@@ -29,24 +27,17 @@ const offerId =async () =>{
 
 
     const getAlloffers =async () =>{
-      // console.log(process.env.NODE_ENV)
-      // console.log(import.meta.env)
        const url=import.meta.env.VITE_BASE_URL+"/aqar/newoffer/getAlloffers"
         return await axios.get(url)
-       
       }
 
       const getoOfferType =async () =>{
-        // console.log(process.env.NODE_ENV)
-        // console.log(import.meta.env)
          const url=import.meta.env.VITE_BASE_URL+"/aqar/newoffer/getofferstype"
           return await axios.get(url)
          
         }
         
     const getOfferToudate =async (key,offerid) =>{
-      // console.log(process.env.NODE_ENV)
-      // console.log(offerid)
        const url=import.meta.env.VITE_BASE_URL+"/aqar/newoffer/getOfferToupdate"
         return await axios.get(url,offerid)
        

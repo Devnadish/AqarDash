@@ -25,6 +25,9 @@ export const NewCard = ({ cardData }) => {
             regoin={cardData.regoin}
             city={cardData.city}
             dist={cardData.dist}
+            locationImage={cardData.map}
+            offerID={cardData.id_offer}
+            cover_offerimage={cardData.cover_offerimage}
           />
         </CMP.OfferCardBody>
         <CMP.OfferCardFooter>

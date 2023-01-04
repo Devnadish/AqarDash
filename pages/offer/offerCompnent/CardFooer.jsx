@@ -6,7 +6,8 @@ import { MdDelete } from "react-icons/md";
 import { MdEdit } from "react-icons/md";
 import DiloagShow from "../../../component/dailog/DiloagShow";
 // import UpdOffer from "../../../dashboard/Offers/UpdOffer";
-
+import { BsImages } from "react-icons/bs";
+import { MdLocationOn } from "react-icons/md";
 
 
 export const CardFooer = ({ offerId ,offerDate}) => {
@@ -28,7 +29,7 @@ export const CardFooer = ({ offerId ,offerDate}) => {
         }}
       >
         <CMP.OfferCardBtn>
-          <BiStopCircle color={"blue"} />
+          <BiStopCircle color={"orange"} />
         </CMP.OfferCardBtn>
         <CMP.OfferCardBtn>
           <MdDelete color={"red"} />
@@ -36,6 +37,13 @@ export const CardFooer = ({ offerId ,offerDate}) => {
         <CMP.OfferCardBtn  onClick={() =>handleUpdate() }>
           <MdEdit color={"green"} />
         </CMP.OfferCardBtn>
+
+        {/* <CMP.OfferCardBtn>
+          <BsImages color={"blue"} />
+        </CMP.OfferCardBtn>
+        <CMP.OfferCardBtn>
+          <MdLocationOn color={"blue"} />
+        </CMP.OfferCardBtn> */}
     
       </Box>
       <Typography

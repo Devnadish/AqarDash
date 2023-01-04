@@ -13,57 +13,21 @@ export const Offer = () => {
   const [open, setOpen] = useState(false);
   const { data, isFetched } = useGetAlloffers();
 
-
+/* --------------Count Rent Offer And Sold Offer Tag-------- */
   let sale=0;
   let rent=0;
-
   const RentCounter=()=>{
     data?.data.forEach(element => {
       element.offertypeCat ==="بيع" ? sale++:rent++;
-      
     });
   }
-
-
  isFetched && RentCounter()
+ /* ------------------------------------------------------- */
 
   return (
     <>
       <CMP.OfferBodyWarper>
-        <CMP.OfferActions>
-          <CMP.OfferCounter>
-            <CMP.OfferCounterWraper>
-              <p>عدد العروض</p>
-                <Countup end={data?.data.length} />   
-            </CMP.OfferCounterWraper>
-            <CMP.OfferCounterWraper>
-              <p>عروض الايجار </p>
-               <Countup end={rent} />  
-            </CMP.OfferCounterWraper>
-            <CMP.OfferCounterWraper>
-              <p>عروض البيع</p>
-               <Countup end={sale} />   
-            </CMP.OfferCounterWraper>
-          </CMP.OfferCounter>
-          <Button
-            variant="contained"
-            component={Link}
-            to={"/newoffer"}
-            // onClick={() => setOpen(true)}
-            endIcon={<MdAddCircleOutline />}
-            sx={{
-              // width: "50%",
-              display: "flex",
-              gap: "1rem",
-              minHeight: "50px",
-              fontFamily: "CB",
-              // mt: 2,
-              ml: 1,
-            }}
-          >
-            <Typography sx={{ fontFamily: "CB" }}>عرض جديد</Typography>
-          </Button>
-        </CMP.OfferActions>
+           <TopAreaOfOffer   data={data} length={length} rent={rent} sale={sale} Link={Link}  />
 
         <CMP.OfferNormalDivr>
           {isFetched &&
@@ -91,3 +55,46 @@ export const Offer = () => {
 };
 
 export default Offer;
+
+    function TopAreaOfOffer({ data, length, rent, sale, Link }) {
+      return (
+        <CMP.OfferActions>
+          <CMP.OfferCounter>
+            <CMP.OfferCounterWraper>
+              <p>عروض</p>
+              <Countup end={data?.data.length} />
+            </CMP.OfferCounterWraper>
+            <CMP.OfferCounterWraper>
+              <p> ايجار </p>
+              <Countup end={rent} />
+            </CMP.OfferCounterWraper>
+            <CMP.OfferCounterWraper>
+              <p> بيع</p>
+              <Countup end={sale} />
+            </CMP.OfferCounterWraper>
+          </CMP.OfferCounter>
+          <Button
+            variant="contained"
+            component={Link}
+            to={"/newoffer"} // onClick={() => setOpen(true)}
+            endIcon={<MdAddCircleOutline />}
+            sx={{
+              display: "flex",
+              gap: "1rem",
+              minHeight: "50px",
+              fontFamily: "CB",
+              ml: 1,
+            }}
+          >
+            <Typography
+              sx={{
+                fontFamily: "CB",
+              }}
+            >
+              عرض جديد
+            </Typography>
+          </Button>
+        </CMP.OfferActions>
+      );
+    }
+  

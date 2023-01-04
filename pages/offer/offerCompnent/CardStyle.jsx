@@ -51,16 +51,18 @@ const OfferCardWraper = styled.div`
 `;
 /* ----------------------------------------- */
 const OfferCardHeader = styled.div`
+  position: relative;
   display: flex;
   align-items: center;
   justify-content: space-between;
+  flex-direction: column;
   width: 100%;
-  min-height:80px;
+  min-height:130px;
   margin: auto;
   /* border-radius: 8px; */
   padding: 0;
   padding: .5rem 1rem;
-  background-color: ${({ theme }) => theme.cardbg};
+  background-color: ${({ theme }) => theme.appleBackgroud};
   color: ${({ theme }) => theme.text};
   font-family: "CB";
   text-align: center;
@@ -127,21 +129,21 @@ display: flex;
 justify-content: center;
 align-items: center;
   font-family: "CB";
-  font-size: 1.4rem;
+  font-size: 1.2rem;
   background-color: ${({theme}) =>   theme.primary.extradark };
-  padding: 1rem ;
+  padding: 0 1rem ;
   border: 2px solid white;
   color: white;
-  width: 50px;
-  height: 50px;
-  border-radius:50%;
+  width: fit-content;
+  height: fit-content;
+  border-radius:4px;
   box-shadow: ${({theme})=>theme.shadow2};
 `;
 
 
  
  
-const OfferOptionTxt = styled.p`
+const OfferOptionTxt = styled.div`
 display: flex;
 justify-content: center;
 align-items: center;
@@ -191,17 +193,30 @@ const LocationDetail = styled.p`
 `;
 const LocationWraper = styled.div`
   display: flex;
-  justify-content: space-between;
-  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
   text-align: right;
-  /* padding: 1rem; */
-  border: 1px solid rgba(255,255,255,.7);
-  border-radius: 8px;
   width: 100%;
-  background-color:  rgba(100,155,255,.2);;
+  gap: 5px;
+  border: 1px solid rgba(0,0,0,.09);
+  border-radius: 4px;
+  margin-top: 5px;
+  min-height: 100px;
+  padding-right: 5px;
+  /* width: 100%; */
+  /* background-color:  rgba(100,155,255,.2);; */
 `;
 
  
+const ImagePreview = styled.img`
+ max-width: 100%;
+ max-height: 100%;
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  border-radius: 8px;
+`;
 
 
 export default {
@@ -219,8 +234,6 @@ export default {
     OfferOptionTxt,
     OfferDetail,
     LocationDetail,
-    LocationWraper
-
-
-
+    LocationWraper,
+    ImagePreview
 }

@@ -29,6 +29,7 @@ function TstSelect() {
       responseType: "json",
     }).then((response) => {
       setCity(response.data);
+      console.lig({city})
     });
   };
   /* ------------------------------------------------------------------------------- */
@@ -108,7 +109,7 @@ function TstSelect() {
               ? area.map((ctr) => {
                   return (
                     <option key={ctr.id} value={ctr.id}>
-                      {ctr.label}
+                      {ctr.label} / {ctr.id}
                     </option>
                   );
                 })
@@ -135,7 +136,7 @@ function TstSelect() {
               ? city.map((ctr) => {
                   return (
                     <option key={ctr.id} value={ctr.id}>
-                      {ctr.label}
+                      {ctr.label} / {ctr.id}
                     </option>
                   );
                 })
@@ -162,7 +163,7 @@ function TstSelect() {
               ? dist.map((ctr) => {
                   return (
                     <option key={ctr.id} value={ctr.id}>
-                      {ctr.label}
+                      {ctr.label} / {ctr.id}
                     </option>
                   );
                 })

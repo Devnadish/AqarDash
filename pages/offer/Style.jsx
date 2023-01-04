@@ -12,6 +12,7 @@ const OfferBodyWarper = styled.div`
   color: ${({ theme }) => theme.text};
   min-height: 0px;
   overflow: auto;
+  background-color: rgba(0, 0, 0, 0.2);
   @media (max-width: 768px) {
     flex-direction: column;
     font-size: 0.8rem;
@@ -47,6 +48,7 @@ justify-content: space-between;
 align-items: center;
 width: 100%;
 margin-top: 10px;
+
 `;
 /* ---------------------------- */
 const OfferCounter= styled.div`
@@ -54,17 +56,20 @@ display: flex;
 justify-content: space-between;
 align-items: center;
 padding: 0 1rem;
+
 gap:15px;
 `;
 /* ---------------------------- */
 const OfferCounterWraper= styled.div`
+background-color: white;
 display: flex;
 justify-content: space-between;
 align-items: center;
 flex-direction: column;
 padding: 0 1rem;
-border-radius:2px ;
-box-shadow: ${({theme})=>theme.shadow1};
+color: red;
+border-radius:4px ;
+/* box-shadow: ${({theme})=>theme.shadow1}; */
 max-height: 50px;
 height: 50px;
 `;
