@@ -6,7 +6,7 @@ import Countup from "react-countup";
 import { Box, Button, Typography } from "@mui/material";
 import { MdAddCircleOutline } from "react-icons/md";
 import { useGetAlloffers } from "../../component/utils/hooks/useGetdata";
-import { NewCard } from "./offerCompnent/NewCard";
+import { NewCard } from "./offerCompnent/offerCard/NewCard";
 import { Link } from "react-router-dom";
 
 export const Offer = () => {

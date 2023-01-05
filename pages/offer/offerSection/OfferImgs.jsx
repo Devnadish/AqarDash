@@ -1,6 +1,6 @@
 import React from 'react'
 import { Box } from '@mui/material'
-import MultiImageUploader from "./DropZone/MultiImageUploader";
+import MultiImageUploader from "../offerCompnent/DropZone/MultiImageUploader";
 import { MdLocationOn } from "react-icons/md";
 import { BsImages,BsCardImage } from "react-icons/bs";
 import SectionTilte from "../../../component/sectionTitle/SectionTilte";

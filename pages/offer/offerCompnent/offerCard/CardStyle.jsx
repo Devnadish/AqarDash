@@ -1,14 +1,14 @@
 import styled from "styled-components";
 
 const HeroImageWarper = styled.div`
-  max-width: 112px;
-  max-height: 112px;
+  max-width: 300px;
+  /* max-height: 112px; */
   margin: auto;
 `;
 /* ----------------------------------------- */
 const Image = styled.img`
- max-width: 112px;
- max-height: 112px;
+ max-width: 100%;
+ /* max-height: 112px; */
   width: 112px;
   height: 112px;
   object-fit: cover;

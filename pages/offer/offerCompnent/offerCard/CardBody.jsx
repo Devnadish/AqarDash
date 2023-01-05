@@ -3,7 +3,7 @@ import CMP from "./CardStyle";
 import { Box, IconButton, Stack } from "@mui/material";
 import { BsImages } from "react-icons/bs";
 import { MdLocationOn,MdLocationOff } from "react-icons/md";
-import DiloagShow from "../../../component/dailog/DiloagShow";
+import DiloagShow from "../../../../component/dailog/DiloagShow";
 import axios from "axios";
 export const CardBody = ({
   imgsrc,

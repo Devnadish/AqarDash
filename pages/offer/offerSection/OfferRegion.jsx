@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { useFormContext } from "react-hook-form";
-import Reigon from "./reigon.json";
+import Reigon from "../offerCompnent/data/reigon.json";
 import axios from "axios";
 import { Box, Stack, Typography } from "@mui/material";
 import ErrorMessage from "../../../component/ErrorMessage";
@@ -12,6 +12,8 @@ const boxSx = {
   flexDirection: "column",
   alignItems: "flex-start",
 };
+
+
 
 const typoSx = { fontFamily: "TB", textAlign: "right", fontSize: ".9rem" };
 

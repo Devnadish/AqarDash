@@ -23,16 +23,20 @@ const distId =""
 const  isOwner =1
  
 export const handleSubmitData = async (data,locationImage, coverImage, imageToUpload,masterOfferId,trigger) => {
-    console.log("🚀 ~ file: NewOffer.jsx:69 ~ handleSubmitData ~ data", data)
-    alert(JSON.stringify(data))
+    // console.log("🚀 ~ file: NewOffer.jsx:69 ~ handleSubmitData ~ data", data)
+    // alert(JSON.stringify(data))
     // alert(masterOfferId)
     // alert(data.CitySelect)
+    if(data.DistCity==="0"){
+      toast.error("يجب اختيار المدينة الصحيحه")
+      return 
+    }
+
     
-    // if(data.DistSelect!=="0"){
-    //    trigger("CitySelect")
-    //    alert("uu")
-    //     return 
-    // }
+    if(data.DistSelect==="0"){
+      toast.error("يجب اختيار الحي الصحيح")
+      return 
+    }
 
 
 

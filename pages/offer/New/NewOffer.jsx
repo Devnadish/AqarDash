@@ -1,11 +1,11 @@
 import React, { useState } from "react";
 import Box from "@mui/material/Box";
-import { OfferId } from "./OfferId";
-import CMP from "./offerStyle";
-import OfferRegion from "./OfferRegion";
-import OfferImgs from "./OfferImgs";
-import { OfferDetail } from "./OfferDetail";
-import { OfferOther } from "./OfferOther";
+import { OfferId } from "../offerSection/OfferId";
+import CMP from "../offerSection/offerStyle";
+import OfferRegion from "../offerSection/OfferRegion";
+import OfferImgs from "../offerSection/OfferImgs";
+import { OfferDetail } from "../offerSection/OfferDetail";
+import { OfferOther } from "../offerSection/OfferOther";
 import { Button, Stack } from "@mui/material";
 import { useOfferID } from "../../../component/utils/hooks/useGetdata";
 import { handleSubmitData ,defValue} from "./fnc";
@@ -130,7 +130,6 @@ function NewOffer() {
                 >
                   <OfferId masterOfferNO={masterOfferId} />
                   <OfferRegion />
-                  {/* <TstSelect/> */}
                 </Box>
 
                 <OfferOther />

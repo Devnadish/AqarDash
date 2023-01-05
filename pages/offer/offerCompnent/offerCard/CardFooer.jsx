@@ -4,7 +4,7 @@ import { Box,Typography } from "@mui/material";
 import { BiStopCircle } from "react-icons/bi";
 import { MdDelete } from "react-icons/md";
 import { MdEdit } from "react-icons/md";
-import DiloagShow from "../../../component/dailog/DiloagShow";
+import DiloagShow from "../../../../component/dailog/DiloagShow";
 // import UpdOffer from "../../../dashboard/Offers/UpdOffer";
 import { BsImages } from "react-icons/bs";
 import { MdLocationOn } from "react-icons/md";

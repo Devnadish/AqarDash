@@ -181,18 +181,7 @@ p{
   
 }
 
-/* .custom-select::after {
-  content: '';
-  border-width: 5px;
-  border-style: solid;
-  border-color: transparent;
-  border-top-color: #222;
-  display: inline-block;
-  border-radius: 2px;
-  position: absolute;
-  right: 10px;
-  bottom: 10px; 
-} */
+ 
 
 .custom-select::before {
   content: '';
@@ -208,8 +197,24 @@ p{
 }
 
 
-
-
+.Toastify__toast-container{
+  width: 95%;
+  
+}
+.Toastify__toast--error {
+  display: flex;
+  align-items: center;
+  border: 1px solid #ff0000;
+  /* border-radius: 50px !important; */
+  background: #ff0008 !important;
+  font-family: "TB";
+}
+.Toastify__toast--success {
+  border: 1px solid #3A9EA5 !important;
+  border-radius: 8px !important;
+  background: #086100 !important;
+  font-family: "CB";
+}
 
 @media (max-width: 768px)  {
   
